@@ -6,31 +6,86 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
+  <title> Sentimoji </title>
+  <meta name="Sentimoji" content="Where reactions live and breathe">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
 
-  <div ng-view></div>
+  <div ng-view>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"> <span class="glyphicon glyphicon-link"></span> Sentimoji</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"> What's hot! <span class="glyphicon glyphicon-fire"></span> <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Page 1-1</a></li>
+          <li><a href="#">Page 1-2</a></li>
+          <li><a href="#">Page 1-3</a></li>
+        </ul>
+      </li>
+      <li class="active"><a href="#"> EmojiZone <span class="glyphicon glyphicon-globe"></span></a></li>
+      <li><a href="#">About <span class="glyphicon glyphicon-qrcode"></span></a> </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right"> 
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <div>Angular seed app: v<span app-version></span></div>
+<!-- <i class="em em-anguished"></i>
+<i class="em em-angry"></i>
+<i class="em em-astonished"></i>
+<i class="em em-blush"></i>
+<i class="em em-confused"></i>
+<i class="em em-disappointed"></i>
+<i class="em em-cold_sweat"></i>
+<i class="em em-grin"></i>
+<i class="em em-heart_eyes"></i>
+<i class="em em-hushed"></i>
+<i class="em em-kissing_heart"></i>
+<i class="em em-open_mouth"></i>
+<i class="em em-wink"></i>
+<i class="em em-scream"></i>
+<i class="em em-sob"></i>
+<i class="em em-stuck_out_tongue_winking_eye"></i>
+<i class="em em-triumph"></i>
+<i class="em em-unamused"></i>
+<i class="em em-yum"></i>
+<i class="em em-expressionless"></i>
+<i class="em em-innocent"></i> -->
+  <form class="form-inline">
+    <input type="text" class="form-control search_bar" size="50" placeholder="Tons of content to emojify">
+    <button type="button" class="btn btn-danger" id="search"> <span class="glyphicon glyphicon-search"></span> Search</button>
+  </form>
+
+</div>
+
+<div class="foot">
+<footer>
+  <p style="color:white"> <span>  Made with <span class="glyphicon glyphicon-heart"></span> by Fredrick Kofi Tam & Joshua Bartlett, © Copyright 2016<span></p> 
+</footer>           
+</div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
+
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
