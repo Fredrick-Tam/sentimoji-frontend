@@ -1,14 +1,33 @@
-'use strict';
+// Importing necessary modules
+var express = require('express');
+var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var path = require('path');
+var numUsers = 0;
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+// Creating static path
+var __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, 'public')));
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+// Setting up the routes
+app.get('/', function(req, res){
+    res.sendFile(__dirname + '/views/index.html');
+});
+
+io.on('connection', function(socket){
+    
+    numUsers++;
+
+    console.log(numUsers + " user(s) online");
+
+    socket.on('disconnect', function(){
+        numUsers--;
+        console.log(numUsers + " user(s) online");
+    });
+});
+
+// Hard coded the port for simplicity at the moment
+http.listen(3005, function(){
+    console.log('listening on *:3005');
+});
